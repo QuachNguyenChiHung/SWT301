@@ -10,7 +10,7 @@ This is a simple calculator app built with Vite (React) for the frontend and Nod
 powershell.exe node calculator-server.js
 ```
 
-The backend will run on http://localhost:3001
+The backend will run on http://localhost:3000
 
 ### 2. Start the frontend (Vite React app)
 
