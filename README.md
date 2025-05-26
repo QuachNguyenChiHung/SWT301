@@ -20,12 +20,11 @@ powershell.exe npm run dev
 
 The frontend will run on http://localhost:5173
 
+###3. Run the test(back-end side):
+npx codeceptjs run
+
 ## Features
 - Enter two numbers
 - Choose an operation (+, -, *, /)
 - Result is calculated on the backend
 - Simple, modern UI
-
----
-
-For any issues, check the browser console or terminal for errors.
