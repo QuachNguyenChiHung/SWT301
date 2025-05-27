@@ -13,7 +13,7 @@ function App() {
     setError('');
     setResult(null);
     try {
-      const response = await fetch('http://localhost:3001/calculate', {
+      const response = await fetch('http://localhost:3000/calculate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ num1, num2, operator })

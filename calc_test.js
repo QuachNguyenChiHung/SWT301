@@ -51,12 +51,13 @@ Scenario('Subtract negative numbers', async ({ I }) => {
 Scenario('Missing num2', async ({ I }) => {
     I.sendPostRequest('/calculate', { num1: '10', operator: '+' });
     I.seeResponseCodeIs(200);
-    // Server trả NaN vì parseFloat(undefined) là NaN
-    I.seeResponseContainsJson({ result: NaN });
+    // Server trả null hoặc không trả kết quả
+    I.seeResponseContainsJson({ result: "null" });
+
 });
 
 Scenario('Non-numeric input', async ({ I }) => {
-    I.sendPostRequest('/calculate', { num1: 'abc', num2: '2', operator: '+' });
+    I.sendPostRequest('/calculate', { num1: 'abc', num2: '2', operator: '*' });
     I.seeResponseCodeIs(200);
-    I.seeResponseContainsJson({ result: NaN });
+    I.seeResponseContainsJson({ result: "NaN" });
 });

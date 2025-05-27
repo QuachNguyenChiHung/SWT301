@@ -12,17 +12,30 @@ app.post('/calculate', (req, res) => {
     let result;
     const a = parseFloat(num1);
     const b = parseFloat(num2);
+    const checkNaN = isNaN(a) || isNaN(b);
+    const isEmpty = (num1 === null || num2 === null || num1 === '' || num2 === '' || num1 === undefined || num2 === undefined);
+    if (isEmpty) {
+        result = "null"
+        return res.json({ result });
+    }
+    else if (checkNaN) {
+        result = "NaN"
+        return res.json({ result });
+    }
     switch (operator) {
         case '+':
+
             result = a + b;
             break;
         case '-':
             result = a - b;
             break;
         case '*':
+
             result = a * b;
             break;
         case '/':
+
             result = b !== 0 ? a / b : 'Error: Division by zero';
             break;
         default:
